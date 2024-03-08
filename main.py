@@ -20,7 +20,6 @@ def extractSequenceFromFasta(path: str) -> str:
     return ''.join(sequence).strip()
     
 def constructSequence(type, path):
-    sequence = extractSequenceFromFasta(path)
     instance = BiologicalSequence(type, path)
     return instance
     
