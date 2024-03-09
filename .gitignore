@@ -1,1 +1,5 @@
 testing/
+seqA.fasta
+seqB.fasta
+create_dict_from_matrix.py
+blosum62.txt
