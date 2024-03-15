@@ -11,7 +11,11 @@ seqA and seqB - paths to fasta files
 [--penalty PENALTY] - penalty for gap oppening, default -8
 
 [--output OUTPUT] - doesn't work yet
+
 [--type {protein,dna,rna}] - doesn't work yet
+
 [--dotplot -d] - doesn't work yet
+
 [--algorithm {SW,NW}] - currently doesn't work, NW is the default now
+
 
