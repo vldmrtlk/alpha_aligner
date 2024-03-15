@@ -10,7 +10,7 @@ usage: `python main.py [-h] [--output OUTPUT] [--type {protein,dna,rna}] [--pena
 
 `seqA` and `seqB` - paths to fasta files
 
-`--penalty PENALTY` - penalty for gap oppening, default -8
+`--penalty PENALTY` - penalty for gap opening, default -8
 
 `--output OUTPUT` - doesn't work yet
 
