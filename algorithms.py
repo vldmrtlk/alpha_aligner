@@ -6,9 +6,16 @@ def basic_scoring(a, b):
         return +1
     else:
         return -1
+    
+def scoring(a, b, matrix = blosum62):
+    score = matrix.get((a, b))
+    if score is not None:
+        return score
+    else:
+        return matrix.get((b, a))
 
 
-def needlemanWunsch(seqA: str, seqB: str, scoring_function = basic_scoring, gap_penalty=-2):
+def needlemanWunsch(seqA: str, seqB: str, scoring_function = scoring, gap_penalty=-8):
     lenA = len(seqA.lower()) # horizontal, i
     lenB = len(seqB.lower()) # vertical, j
 

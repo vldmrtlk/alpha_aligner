@@ -26,11 +26,11 @@ def constructBiologicalSequence(type, path):
     instance = BiologicalSequence(type, path)
     return instance
     
-def align(sequenceA: BiologicalSequence, sequenceB: BiologicalSequence):
-    seqA = extractSequenceFromFasta(sequenceA.path)
-    seqB = extractSequenceFromFasta(sequenceB.path)
+def align(sequenceA: BiologicalSequence, sequenceB: BiologicalSequence, penalty = -8):
+    seqA = extractSequenceFromFasta(sequenceA.path).lower()
+    seqB = extractSequenceFromFasta(sequenceB.path).lower()
 
-    alignments = needlemanWunsch(seqA,seqB)
+    alignments = needlemanWunsch(seqA,seqB,gap_penalty=penalty)
     for pair in alignments:
         print(f"{pair[0]}\n{pair[1]}\n")
     
@@ -40,6 +40,7 @@ def main():
     parser.add_argument('seqB', metavar='seqB', type=str, help="path to FASTA sequence file 2") # loop won't work with next if statement
     parser.add_argument('--output', type=str, default='alignment.fasta', help='path to output file (default: alignment.fasta)') 
     parser.add_argument('--type', type=str, default='protein', choices=["protein", "dna", "rna"], help="type of sequence (default: protein)")
+    parser.add_argument('--penalty', type=int, default=-8, help="penalty for creating gap (defautl: -8)")
     parser.add_argument('--algorithm', type=str, default="SW", choices=["SW", "NW"], help="alignment algorithm (default: SW)")
     parser.add_argument('--dotplot', metavar="-d", type=bool, default=False, help="output dotplot file (default: False)")
     args = parser.parse_args()
@@ -48,8 +49,8 @@ def main():
 
     sequenceA = constructBiologicalSequence(args.type, args.seqA)
     sequenceB = constructBiologicalSequence(args.type, args.seqB)
-
-    align(sequenceA, sequenceB)
+    penalty = args.penalty
+    align(sequenceA, sequenceB, penalty)
 
 if __name__ == "__main__":
     main()    
