@@ -2,9 +2,9 @@
 
 *work in progress...*
 
-usage python main.py 
+pairwise alignment cli tool that (will) supports local and global alignmnents
 
-usage: `main.py [-h] [--output OUTPUT] [--type {protein,dna,rna}] [--penalty PENALTY] [--algorithm {SW,NW}] [--dotplot -d] seqA seqB`
+usage: `python main.py [-h] [--output OUTPUT] [--type {protein,dna,rna}] [--penalty PENALTY] [--algorithm {SW,NW}] [--dotplot -d] seqA seqB`
 
 `seqA` and `seqB` - paths to fasta files
 
