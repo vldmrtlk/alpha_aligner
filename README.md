@@ -1,6 +1,7 @@
 # alpha-aligner
 
 *work in progress...*
+
 usage python main.py 
 
 usage: main.py [-h] [--output OUTPUT] [--type {protein,dna,rna}] [--penalty PENALTY] [--algorithm {SW,NW}] [--dotplot -d] seqA seqB
