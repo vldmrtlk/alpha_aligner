@@ -2,7 +2,9 @@
 
 *work in progress...*
 
-pairwise alignment cli tool that (will) supports local and global alignmnents
+pairwise alignment cli tool that (*will*) supports local and global alignmnents.
+
+
 
 usage: `python main.py [-h] [--output OUTPUT] [--type {protein,dna,rna}] [--penalty PENALTY] [--algorithm {SW,NW}] [--dotplot -d] seqA seqB`
 
